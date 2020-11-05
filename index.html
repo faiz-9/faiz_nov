@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NHOPYGWEBSITE</title>    
+    <title>NHOPYGWEBSITE</title>  
+    <script src="https://kit.fontawesome.com/a3d6105a86.js" crossorigin="anonymous"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
+    <div class="back-to-top">
+        <i class="fa fa-angle-up"></i>
+    </div>
+
     <div class="navbar">
 
             <div class="logo"><h3> Megascopic </h3></div>
-
+        
             <div class="list">
-                <ul class="list-items">
+                <ul class="list-items" id="list-items">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">FAQ's</a></li>
@@ -21,6 +27,13 @@
                     
                 </ul>
             </div>
+
+                <div class="burger" id="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            <!-- </div> -->
     </div>
 
 
@@ -187,29 +200,72 @@
 
 <div class="footer">
     <div class="footer-box">
-        <div class="fb">
-        <p>We provide expert consulting and financial advice to both individual and businesses.</p>
-         </div>
-
-         <div class="fb">
-            <p>CONTACT DETAILS
-                10 Street, Los Angeles, CA, 93050
-                
-                1555-234-45-67
-                
-                demomail@test.org</p>
-             </div>
-
-             <div class="fb">
-                <p>CATEGORIES
-                    Lorem ipsum
-                   
-                    Lorem ipsum
-                   
-                    Lorem ipsum</p>
-                 </div>
+        <p>Copyright @Faizan 2020</p>
     </div>
 </div>
+
+
+
+
+<script>
+
+const burger = document.querySelector('.burger');
+const navbar = document.querySelector('.navbar');
+const logo = document.querySelector('.logo');
+const list = document.querySelector('.list');
+const list_items = document.querySelector('.list-items');
+const backToTop=document.querySelector(".back-to-top")
+
+
+burger.addEventListener('click',()=>{
+    burger.classList.toggle('cross');
+    navbar.classList.toggle('new-navbar');
+    logo.classList.toggle('new-logo');
+    list.classList.toggle('new-list');
+    list_items.classList.toggle('new-list-items');
+})
+
+
+
+
+
+
+
+
+
+window.addEventListener("scroll",function(){
+
+
+// if(window.scrollY>0){
+//     header.style.backgroundColor="#fac769"
+//     header.style.opacity="1"
+// }else{
+//     header.style.backgroundColor="white"
+//     header.style.opacity="0.9"
+// }
+
+if(window.scrollY>300){
+    backToTop.style.display="flex";
+
+    backToTop.addEventListener("click",function(){
+        window.scroll(0,0)
+    })
+}
+else{
+    backToTop.style.display="none"
+}
+})
+
+
+
+    
+
+
+
+
+
+
+</script>
 
     
 </body>
